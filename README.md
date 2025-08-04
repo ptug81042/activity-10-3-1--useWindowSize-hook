@@ -1,69 +1,51 @@
-# React + TypeScript + Vite
+# Responsive Window Tracker (React + TypeScript + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates a real-time window dimension tracker using a custom React Hook. It showcases how to use `useEffect` for lifecycle management, `useState` for dynamic updates, and TypeScript for type safety — all powered by Vite for lightning-fast development.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Features
 
-## Expanding the ESLint configuration
+-  Custom `useWindowSize` hook
+-  React + TypeScript + Vite project setup
+-  Live updates of window width & height
+-  Cleanup of window event listeners on unmount
+-  CSS Modules for scoped styling
+-  Optional ESLint config for type-aware linting
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Project Overview
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+This application renders a component that listens to the browser window size and updates the display in real-time.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+It includes:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- `useWindowSize` custom hook:
+  - Stores `width` and `height` in local state
+  - Listens to the `resize` event
+  - Automatically cleans up the event listener
+- `WindowSizeDisplay` component:
+  - Calls `useWindowSize`
+  - Displays dimensions to the user
+- `App.tsx`: Root component rendering the display
+- `App.css`: Basic styling for centered layout
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Use this as a reference for responsive UI, hooks, and organizing a TypeScript React project.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## Setup & Usage
+
+### Prerequisites
+
+- Node.js ≥ 16
+- npm or yarn
+
+### Installation
+
+```bash
+git clone https://github.com/your-username/responsive-window-tracker.git
+cd responsive-window-tracker
+npm install
+npm run dev
