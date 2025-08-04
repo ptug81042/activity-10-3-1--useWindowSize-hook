@@ -45,7 +45,7 @@ Use this as a reference for responsive UI, hooks, and organizing a TypeScript Re
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/responsive-window-tracker.git
-cd responsive-window-tracker
+git clone [https://github.com/your-username/responsive-window-tracker.git](https://github.com/ptug81042/activity-10-3-1--useWindowSize-hook/tree/main)
+cd activity-10-3-1--useWindowSize-hook/tree/main
 npm install
 npm run dev
